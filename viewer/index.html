@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSON View Tool</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="main-content">
+    <h1>📘 JSON Viewer</h1>
+
+    <!-- JSON Input Section -->
+    <div class="flex">
+      <textarea id="jsonInput" placeholder="Paste your JSON here..."></textarea>
+    </div>
+
+    <!-- File Upload Section -->
+    <div class="controls">
+      <label for="fileInput">Upload JSON File:</label>
+      <input type="file" id="fileInput" accept=".json" />
+    </div>
+
+    <!-- Configuration Section -->
+    <div class="controls">
+      <br />
+      <label for="nestedKeys">Nested JSON Keys:</label>
+      <input type="text" id="nestedKeys" placeholder="Parse nested JSON keys (comma-separated)"
+        title="Keys containing JSON strings to parse" />
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="controls">
+      <button id="formatJson">🧹 Format JSON</button>
+      <button id="expandAll">Expand All</button>
+      <button id="collapseAll">Collapse All</button>
+      <button id="refreshData">🔄 Refresh</button>
+      <button class="reset" onclick="resetAll()">Reset</button>
+    </div>
+
+
+
+
+    <div id="breadcrumb" class="breadcrumb"></div>
+
+    <!-- JSON View Area -->
+    <div id="views" class="view">
+      <div class="view-placeholder">Upload or paste a JSON to view</div>
+    </div>
+
+    <!-- Context Menu -->
+    <div id="contextMenu" class="context-menu"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-content">
+      <div class="footer-credits">
+        <span class="created-by">Created by</span>
+        <a href="#" class="creator-link" title="Moinuddin Girach - Developer">
+          <strong>Moinuddin Girach</strong>
+        </a>
+      </div>
+    </div>
+  </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

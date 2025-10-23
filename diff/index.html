@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON Diff Tool</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-content">
+      <h1>🔍 JSON Diff Tool</h1>
+
+      <!-- JSON Input Section -->
+      <div class="flex">
+        <textarea
+          id="json1"
+          placeholder="Paste your first JSON here..."
+        ></textarea>
+        <textarea
+          id="json2"
+          placeholder="Paste your second JSON here..."
+        ></textarea>
+      </div>
+      <!-- File Upload Section -->
+      <div class="controls">
+        <label for="file1">First JSON File:</label>
+        <input type="file" id="file1" accept=".json" />
+        <label for="file2">Second JSON File:</label>
+        <input type="file" id="file2" accept=".json" />
+      </div>
+      <!-- Configuration Section -->
+      <div class="controls">
+      </br>
+        <label for="ignoreKeys">Ignore Keys:</label>
+        <input
+          type="text"
+          id="ignoreKeys"
+          placeholder="Ignore keys (comma-separated)"
+          title="Keys to ignore during comparison"
+        />
+        <label for="nestedKeys">Nested JSON Keys:</label>
+        <input
+          type="text"
+          id="nestedKeys"
+          placeholder="Parse nested JSON keys (comma-separated)"
+          title="Keys containing JSON strings to parse"
+        />
+        <label for="uniqueKey">Array Unique Keys:</label>
+        <input
+          type="text"
+          id="uniqueKey"
+          placeholder="Unique keys for arrays (path:key)"
+          title="e.g., items:id, users:email"
+        />
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="controls">
+        <button onclick="startCompare()">Compare JSONs</button>
+        <button class="reset" onclick="resetAll()">Reset All</button>
+      </div>
+
+      <!-- Progress Display -->
+      <div id="progress" class="progress"></div>
+
+      <!-- Breadcrumb Navigation -->
+      <div id="breadcrumb" class="breadcrumb"></div>
+
+      <!-- Unique Key Filter Container -->
+      <div
+        id="uniqueKeyFilterContainer"
+        class="unique-filter"
+        style="display: none"
+      >
+        <h3>Filter by Unique Keys:</h3>
+        <div id="uniqueKeyCheckboxContainer" class="unique-checkbox-list"></div>
+        <div class="unique-filter-buttons">
+          <button id="selectAllKeys">Select All</button>
+          <button id="deselectAllKeys">Deselect All</button>
+          <button id="resetKeyFilter">Reset Filter</button>
+        </div>
+      </div>
+
+      <!-- Diff Views -->
+      <div id="views">
+        <div id="leftView" class="view">
+          <div class="view-placeholder">Select JSONs and click Compare</div>
+        </div>
+        <div id="rightView" class="view">
+          <div class="view-placeholder">Select JSONs and click Compare</div>
+        </div>
+      </div>
+
+      <!-- Context Menu -->
+      <div id="contextMenu" class="context-menu">
+        <!-- Menu items will be added dynamically -->
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-content">
+        <div class="footer-info">
+          <!-- <span class="footer-title">JSON Diff Tool</span>
+          <span class="footer-version">v2.0</span> -->
+        </div>
+        <div class="footer-credits">
+          <span class="created-by">Created by</span>
+          <a href="#" class="creator-link" title="Moinuddin Girach - Developer">
+            <strong>Moinuddin Girach</strong>
+          </a>
+        </div>
+        <div class="footer-links">
+          <!-- <span class="footer-year">© 2025</span>
+          <span class="footer-separator">•</span>
+          <span class="footer-tech">Built with HTML, CSS & JavaScript</span> -->
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
