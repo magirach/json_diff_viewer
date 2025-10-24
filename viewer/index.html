@@ -4,62 +4,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JSON View Tool</title>
+  <title>JSON Viewer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <div class="main-content">
-    <h1>📘 JSON Viewer</h1>
+    <header class="app-header">
+      <h1>📘 JSON Viewer</h1>
+      <p class="subtitle">A clean, modern tool for visualizing and exploring JSON</p>
+    </header>
 
     <!-- JSON Input Section -->
-    <div class="flex">
+    <section class="panel">
+      <label class="panel-label">📝 JSON Input</label>
       <textarea id="jsonInput" placeholder="Paste your JSON here..."></textarea>
-    </div>
+      <div class="upload-row">
+        <label for="fileInput" class="file-label">
+          <input type="file" id="fileInput" accept=".json" />
+          <span>📂 Upload JSON File</span>
+        </label>
+      </div>
+    </section>
 
-    <!-- File Upload Section -->
-    <div class="controls">
-      <label for="fileInput">Upload JSON File:</label>
-      <input type="file" id="fileInput" accept=".json" />
-    </div>
+    <!-- Nested Keys -->
+    <section class="panel">
+      <label class="panel-label">🔗 Nested JSON Keys</label>
+      <input type="text" id="nestedKeys" class="input-field"
+        placeholder="Comma-separated keys containing JSON strings" />
+    </section>
 
-    <!-- Configuration Section -->
-    <div class="controls">
-      <br />
-      <label for="nestedKeys">Nested JSON Keys:</label>
-      <input type="text" id="nestedKeys" placeholder="Parse nested JSON keys (comma-separated)"
-        title="Keys containing JSON strings to parse" />
-    </div>
-
-    <!-- Search Section -->
+    <!-- Search Bar -->
     <div class="search-bar">
-  <div class="search-input-container">
-    <span class="search-icon">🔍</span>
-    <input
-      type="text"
-      id="searchBox"
-      placeholder="Search keys or values..."
-      aria-label="Search JSON"
-    />
-  </div>
-  <div class="search-buttons">
-    <button id="searchBtn" class="primary">Search</button>
-    <button id="clearSearch" class="secondary">Clear</button>
-  </div>
-</div>
+      <div class="search-input-container">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="searchBox" placeholder="Search keys or values..." aria-label="Search JSON" />
+      </div>
+      <div class="search-buttons">
+        <button id="searchBtn" class="primary">Search</button>
+        <button id="clearSearch" class="secondary">Clear</button>
+      </div>
+    </div>
+
+    <!-- Search Results -->
+    <div id="searchResults" class="search-results hidden">
+      <div class="results-header">
+        <strong>Search Results</strong>
+        <div class="result-controls">
+          <button id="prevResult" title="Previous match">⬆</button>
+          <button id="nextResult" title="Next match">⬇</button>
+          <span id="resultCount">(0 matches)</span>
+          <button id="closeResults" title="Close Results">✖</button>
+        </div>
+      </div>
+      <ul id="resultsList"></ul>
+    </div>
 
 
     <!-- Action Buttons -->
-    <div class="controls">
-      <button id="formatJson">🧹 Format JSON</button>
-      <button id="expandAll">Expand All</button>
-      <button id="collapseAll">Collapse All</button>
-      <button id="refreshData">🔄 Refresh</button>
-      <button class="reset" onclick="resetAll()">Reset</button>
-    </div>
-
-
-
+    <section class="action-bar">
+      <button id="formatJson" class="primary">🧹 Format JSON</button>
+      <button id="expandAll" class="secondary">⬇ Expand All</button>
+      <button id="collapseAll" class="secondary">⬆ Collapse All</button>
+      <button id="refreshData" class="secondary">🔄 Refresh</button>
+      <button class="danger" onclick="resetAll()">🗑 Reset</button>
+    </section>
+    <!-- Breadcrumb Navigation -->
 
     <div id="breadcrumb" class="breadcrumb"></div>
 
@@ -72,19 +82,15 @@
     <div id="contextMenu" class="context-menu"></div>
   </div>
 
-  <!-- Footer -->
   <footer class="app-footer">
-    <div class="footer-content">
-      <div class="footer-credits">
-        <span class="created-by">Created by</span>
-        <a href="#" class="creator-link" title="Moinuddin Girach - Developer">
-          <strong>Moinuddin Girach</strong>
-        </a>
-      </div>
-    </div>
+    <p>
+      Built by
+      <a href="#" class="creator-link" title="Moinuddin Girach - Developer">Moinuddin Girach</a>
+      💙
+    </p>
   </footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify.min.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.14.11/beautify.min.js"></script>
   <script src="script.js"></script>
 </body>
 
