@@ -71,7 +71,7 @@ body {
 
 /* Optional small icon alignment */
 .panel-label::before {
-  content: "🔗";
+  content: "";
   font-size: 16px;
   color: var(--primary);
   display: inline-block;
