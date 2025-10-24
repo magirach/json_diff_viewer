@@ -155,3 +155,100 @@ ul.json-level {
   color: #999;
   margin: 0 5px;
 }
+
+/* Search Highlight */
+.highlight {
+  background-color: yellow;
+  color: #000;
+  border-radius: 3px;
+  padding: 1px 3px;
+}
+/* --- Modern Search Bar --- */
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 10px 16px;
+  margin: 15px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-input-container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  background: #f1f5f9;
+  border-radius: 8px;
+  padding: 8px 12px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.search-input-container:focus-within {
+  background: #fff;
+  border-color: #007acc;
+  box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.15);
+}
+
+.search-icon {
+  margin-right: 8px;
+  color: #007acc;
+  font-size: 16px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  width: 100%;
+  color: #333;
+}
+
+.search-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.search-buttons button {
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.25s ease;
+}
+
+.search-buttons button.primary {
+  background: linear-gradient(90deg, #007acc, #0098ff);
+  color: #fff;
+  box-shadow: 0 3px 6px rgba(0, 122, 204, 0.25);
+}
+
+.search-buttons button.primary:hover {
+  background: linear-gradient(90deg, #0062a3, #0081d1);
+}
+
+.search-buttons button.secondary {
+  background: #f1f5f9;
+  color: #444;
+}
+
+.search-buttons button.secondary:hover {
+  background: #e2e8f0;
+}
+
+/* Highlight text style */
+.highlight {
+  background: linear-gradient(90deg, #ffe259, #ffa751);
+  color: #000;
+  border-radius: 4px;
+  padding: 1px 3px;
+  box-shadow: 0 0 3px rgba(255, 167, 81, 0.4);
+}
